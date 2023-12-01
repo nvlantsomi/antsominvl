@@ -86,16 +86,18 @@
       }
       return null;
     }
+	const customerId = localStorage.getItem('_cdp_cusid');
 
     document.addEventListener('DOMContentLoaded', function() {
       // Get the visitorId from the '_asm_uid' cookie
       const visitorId = getCookieValue('_cdp_cusid');
-      console.log('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa:  ',visitorId);
+	const customerId = localStorage.getItem('_cdp_cusid');
+      console.log('customer_id:  ',customerId);
 
       // Replace the lookupId attribute in the antsomi-webinbox component
       const antsomiWebinbox = document.querySelector('antsomi-webinbox');
       if (antsomiWebinbox && visitorId) {
-        antsomiWebinbox.setAttribute('lookupId', visitorId);
+        antsomiWebinbox.setAttribute('lookupId', customerId);
       }
     });
   </script>
