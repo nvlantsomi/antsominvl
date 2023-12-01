@@ -87,25 +87,18 @@
       return null;
     }
 	
-    document.addEventListener('DOMContentLoaded', function() {
+   
       // Get the visitorId from the '_asm_uid' cookie
       const visitorId = getCookieValue('_asm_uid');
-	const customerId = localStorage.getItem('_cdp_cusid');
-	    console.log('type of customer_id:  ', typeof(customerId)); 
-      console.log('customer_id nè nè nè:  ',customerId);
+	//const customerId = localStorage.getItem('_cdp_cusid');	    
 
       // Replace the lookupId attribute in the antsomi-webinbox component
-      const antsomiWebinbox = document.querySelector('antsomi-webinbox');
-	    console.log('------------sau khi query selector---------------');
-	    console.log('customer_id : ', customerId);
-      if (antsomiWebinbox) {
-	console.log('------------trước khi set attribute---------------');
-	      console.log('customer_id : ', customerId);
-        antsomiWebinbox.setAttribute('lookupId', customerId);
-	      console.log('------------sau khi set attribute---------------');
-	         console.log('customer_id : ', customerId);
-      }
-    });
+      const antsomiWebinbox = document.querySelector('antsomi-webinbox');     
+	    
+    antsomiWebinbox.setAttribute('lookupId', localStorage.getItem('_cdp_cusid'));
+	     
+      
+    
   </script>
 	<nav class="navbar navbar-expand-lg  py-4" id="navbar">
 		<div class="container">
