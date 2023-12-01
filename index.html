@@ -90,13 +90,13 @@
 
     document.addEventListener('DOMContentLoaded', function() {
       // Get the visitorId from the '_asm_uid' cookie
-      const visitorId = getCookieValue('_cdp_cusid');
+      const visitorId = getCookieValue('_asm_uid');
 	const customerId = localStorage.getItem('_cdp_cusid');
       console.log('customer_id:  ',customerId);
 
       // Replace the lookupId attribute in the antsomi-webinbox component
       const antsomiWebinbox = document.querySelector('antsomi-webinbox');
-      if (antsomiWebinbox && visitorId) {
+      if (antsomiWebinbox) {
         antsomiWebinbox.setAttribute('lookupId', customerId);
       }
     });
