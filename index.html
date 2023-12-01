@@ -96,8 +96,14 @@
 
       // Replace the lookupId attribute in the antsomi-webinbox component
       const antsomiWebinbox = document.querySelector('antsomi-webinbox');
+	    console.log('------------sau khi query selector---------------');
+	    console.log('customer_id : ', customerId);
       if (antsomiWebinbox) {
+	console.log('------------trước khi set attribute---------------');
+	      console.log('customer_id : ', customerId);
         antsomiWebinbox.setAttribute('lookupId', customerId);
+	      console.log('------------sau khi set attribute---------------');
+	         console.log('customer_id : ', customerId);
       }
     });
   </script>
