@@ -91,6 +91,7 @@
 		  </div>
 		</div>
 	</nav>
+<script src="https://st-platform.ants.tech/js/libs/app-inbox/app-inbox.min.js?v=1"></script>
 </header>
 
 <!-- Header Close --> 
@@ -219,6 +220,24 @@
 		</div>
 	</div>
 </section>
+
+<antsomi-webinbox portalId="33167" destinationId="1351806" selector="body" lookupId="" lookupType="customer"></antsomi-webinbox>
+
+<script type="text/javascript">
+  // Function to get a cookie value by name
+  const getCookieValue = (cookieName) => 
+    document.cookie
+      .split('; ')
+      .find(row => row.startsWith(`${cookieName}=`))
+      ?.split('=')[1] || null;
+
+  // Replace the lookupId attribute in the antsomi-webinbox component
+  const antsomiWebinbox = document.querySelector('antsomi-webinbox');
+  if (antsomiWebinbox) {
+    const lookupId = localStorage.getItem('_cdp_cusid');
+    antsomiWebinbox.setAttribute('lookupId', lookupId || '');
+  }
+</script>
 
 <!-- footer Start -->
 <footer class="footer section">
